@@ -1,0 +1,3 @@
+for ["FormDefine", "Form", "FormCategory", "FormInstance", "FileItem"] do it:
+  println "Query<\(it)> query\(it)();"
+done
