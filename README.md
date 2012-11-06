@@ -44,6 +44,11 @@ $ time go run t.go && go build t.go && time ./t
     user	0m0.004s
     sys	0m0.000s
 
+$ time scala t.scala
+
+    real	0m0.683s
+    user	0m0.352s
+    sys	0m0.048s
 
     
 
