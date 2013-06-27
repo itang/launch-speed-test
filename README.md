@@ -50,6 +50,14 @@ $ time scala t.scala
     user	0m0.352s
     sys	0m0.048s
 
-    
+
+$ time dart t.dart && time dart -c t.dart
+
+    real    0m0.036s
+    user    0m0.024s
+    sys 0m0.008s
 
 
+    real    0m0.023s
+    user    0m0.020s
+    sys 0m0.000s
