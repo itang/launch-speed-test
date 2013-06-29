@@ -61,3 +61,10 @@ $ time dart t.dart && time dart -c t.dart
     real    0m0.023s
     user    0m0.020s
     sys 0m0.000s
+
+$ elixir --version && time elixir t.ex
+Elixir 0.9.3.dev
+
+    real    0m0.595s
+    user    0m0.544s
+    sys 0m0.124s
