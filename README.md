@@ -1,54 +1,58 @@
+# Lanuch speed tests for some languages.
+
+## Environment
+
+$ uname -a
+
+    Linux 3.8.0-25-generic x86_64 x86_64 x86_64 GNU/Linux
+
 ## Results:
 
-$ time clojure t.clj && time yeti t.yeti && time (javac T.java && java T) && time java T 
+### Clojure
 
-    real	0m0.899s
-    user	0m1.220s
-    sys	0m0.076s
+$ echo ~/bin/clojure
 
+    java -noverify -Xmx512M -Xss1M -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=384M -jar `dirname $0`/clojure.jar "$@"
 
-    real	0m0.154s
-    user	0m0.128s
-    sys	0m0.040s
+$ time clojure t.clj
 
-    real	0m0.607s
-    user	0m1.000s
-    sys	0m0.044s
+    real    0m0.899s
+    user    0m1.220s
+    sys 0m0.076s
 
+### Yeti
 
-    real	0m0.069s
-    user	0m0.052s
-    sys	0m0.016s
+$ echo ~/bin/yeti
 
-### Ruby
+    java -noverify -Xmx512M -Xss1M -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=384M -jar `dirname $0`/yeti.jar "$@"
 
-$ rvm system && time ruby t.rb && rvm use jruby && time ruby t.rb
+$ yeti -v
 
-    real	0m0.041s
-    user	0m0.036s
-    sys	0m0.008s
+    Yeti 0.9.8+
 
+$ time yeti t.yeti
 
-    real	0m1.317s
-    user	0m2.244s
-    sys	0m0.088s
+    real    0m0.162s
+    user    0m0.168s
+    sys 0m0.024s
 
-### Go
+### Java
 
-$ go version && time go build t.go && time ./t && time go run t.go
-go version go1.1.1 linux/amd64
+$ java -version
+    
+    java version "1.7.0_21"
+    Java(TM) SE Runtime Environment (build 1.7.0_21-b11)
+    Java HotSpot(TM) 64-Bit Server VM (build 23.21-b01, mixed mode)
 
-    real    0m0.197s
-    user    0m0.148s
-    sys 0m0.040s
+$ rm T.class && time (javac T.java && java T) && time java T
 
-    real    0m0.012s
-    user    0m0.008s
-    sys 0m0.000s
+    real    0m1.303s
+    user    0m1.316s
+    sys 0m0.100s
 
-    real    0m0.211s
-    user    0m0.164s
-    sys 0m0.032s
+    real    0m0.070s
+    user    0m0.052s
+    sys 0m0.016s
 
 ### Scala
 
@@ -61,6 +65,44 @@ $ time scala t.scala
     real    0m0.697s
     user    0m0.376s
     sys 0m0.036s
+
+### Ruby/JRuby
+
+$ rvm system && ruby -v
+
+    ruby 2.0.0p195 (2013-05-14 revision 40734) [x86_64-linux]
+
+$ time ruby t.rb 
+    
+    real    0m0.038s
+    user    0m0.028s
+    sys 0m0.008s
+
+$ rvm use jruby && time ruby t.rb
+
+    real	0m1.317s
+    user	0m2.244s
+    sys	0m0.088s
+
+### Go
+
+$ go version
+
+    go version go1.1.1 linux/amd64
+
+$ rm -f t && time go build t.go && time ./t && time go run t.go
+
+    real    0m0.197s
+    user    0m0.148s
+    sys 0m0.040s
+
+    real    0m0.012s
+    user    0m0.008s
+    sys 0m0.000s
+
+    real    0m0.211s
+    user    0m0.164s
+    sys 0m0.032s
 
 ### Dart
 
@@ -95,15 +137,16 @@ $ time elixir t.ex
 
     rust-0.6
 
-$ time rust build t.rs && time ./t && time rust run t.rs
+$ rm -f t && time rust build t.rs && time ./t && time rust run t.rs
 
     real    0m0.396s
     user    0m0.344s
     sys 0m0.044s
 
-    real    0m0.010s
+    real    0m0.008s
     user    0m0.000s
-    sys 0m0.008s
+    sys 0m0.004s
+
 
     real    0m0.414s
     user    0m0.332s
