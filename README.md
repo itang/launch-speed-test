@@ -39,7 +39,7 @@ $ time yeti t.yeti
 ### Java
 
 $ java -version
-    
+
     java version "1.7.0_21"
     Java(TM) SE Runtime Environment (build 1.7.0_21-b11)
     Java HotSpot(TM) 64-Bit Server VM (build 23.21-b01, mixed mode)
@@ -57,7 +57,7 @@ $ rm T.class && time (javac T.java && java T) && time java T
 ### Scala
 
 $ scala -version
-    
+
     Scala code runner version 2.11.0-M3 -- Copyright 2002-2013, LAMP/EPFL
 
 $ time scala t.scala
@@ -72,8 +72,8 @@ $ rvm system && ruby -v
 
     ruby 2.0.0p195 (2013-05-14 revision 40734) [x86_64-linux]
 
-$ time ruby t.rb 
-    
+$ time ruby t.rb
+
     real    0m0.038s
     user    0m0.028s
     sys 0m0.008s
@@ -120,6 +120,18 @@ $ time dart t.dart && time dart -c t.dart
     real    0m0.023s
     user    0m0.020s
     sys 0m0.000s
+
+### Node.js
+
+$ node -v
+
+    v0.10.12
+
+$ time node t.js
+
+    real	0m0.051s
+    user	0m0.048s
+    sys	0m0.000s
 
 ### Elixir
 
