@@ -163,3 +163,7 @@ $ rm -f t && time rust build t.rs && time ./t && time rust run t.rs
     real    0m0.414s
     user    0m0.332s
     sys 0m0.068s
+
+## Summary
+
+    Dart, Ruby, Node.js, Yeti, Go ...
