@@ -164,6 +164,34 @@ $ rm -f t && time rust build t.rs && time ./t && time rust run t.rs
     user    0m0.332s
     sys 0m0.068s
 
+### Nimrod
+
+$ nimrod -v
+
+    Nimrod Compiler Version 0.9.3 (2013-09-23) [Linux: amd64]
+    Copyright (c) 2004-2013 by Andreas Rumpf
+    
+$ rm -rf nimcache/ || rm t && time nimrod c --verbosity:0 t.nim && time ./t 
+    Hint: operation successful (7589 lines compiled; 0.803 sec total; 13.133MB) [SuccessX]
+
+    real	0m0.809s
+    user	0m0.768s
+    sys	0m0.056s
+
+    ...
+    real	0m0.002s
+    user	0m0.000s
+    sys	0m0.000s
+    
+$ rm -rf nimcache/ || rm t && time nimrod c --verbosity:0 -r t.nim
+
+    Hint: operation successful (7589 lines compiled; 0.808 sec total; 13.133MB) [SuccessX]
+    ...
+    real	0m0.820s
+    user	0m0.788s
+    sys	0m0.048s
+
+
 ## Summary
 
     Dart, Ruby, Node.js, Yeti, Go ...
