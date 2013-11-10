@@ -191,7 +191,20 @@ $ rm -rf nimcache/ || rm t && time nimrod c --verbosity:0 -r t.nim
     user	0m0.788s
     sys	0m0.048s
 
+### Lua
+
+$ lua -v
+
+    Lua 5.2.2  Copyright (C) 1994-2013 Lua.org, PUC-Rio
+    
+$ time lua t.lua
+
+    real	0m0.004s
+    user	0m0.001s
+    sys	0m0.003s
+
 
 ## Summary
 
-    Dart, Ruby, Node.js, Yeti, Go ...
+    Lua, Dart, Ruby, Node.js, Yeti, Go ...
+
