@@ -203,6 +203,20 @@ $ time lua t.lua
     user	0m0.001s
     sys	0m0.003s
 
+### Julia
+
+$ julia -v
+
+julia version 0.4.0-dev+2224
+
+
+$ time julia t.jl
+
+```
+real	0m0.206s
+user	0m0.173s
+sys	0m0.289s
+```
 
 ## Summary
 
