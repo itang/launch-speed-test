@@ -2,3 +2,6 @@ t
 t~
 
 nimcache/
+
+.crystal/
+

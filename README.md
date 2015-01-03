@@ -218,7 +218,33 @@ user	0m0.173s
 sys	0m0.289s
 ```
 
+### Crystal
+
+$ crystal --version
+
+```
+Crystal 0.5.6 [a77a239] (Wed Dec 31 17:41:24 UTC 2014)
+```
+
+$ time crystal t.cr
+
+```
+real	0m0.147s
+user	0m0.111s
+sys	0m0.088s
+```
+
+### Wren
+
+$ time wren t.wren 
+
+```
+real	0m0.005s
+user	0m0.005s
+sys	0m0.000s
+```
+
 ## Summary
 
-    Lua, Dart, Ruby, Node.js, Yeti, Go ...
+    Lua/Wren, Dart, Ruby, Node.js, Yeti, Go ...
 
