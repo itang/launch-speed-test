@@ -244,6 +244,22 @@ user	0m0.005s
 sys	0m0.000s
 ```
 
+### Pixie
+
+$ pixie-vm -v
+
+```
+Pixie 0.1
+```
+
+$ time pixie-vm t.pxi
+
+```
+real    0m0.177s
+user    0m0.164s
+sys 0m0.012s
+```
+
 ## Summary
 
     Lua/Wren, Dart, Ruby, Node.js, Yeti, Go ...
