@@ -1,4 +1,3 @@
 # elixir version
-
 names = ["FormDefine", "Form", "FormCategory", "FormInstance", "FileItem"]
-Enum.each names, fn(x) -> IO.puts %b(Query<#{x}> query#{x}\(\);) end
+names |> Enum.each &(IO.puts ~s"Query<#{&1}> query#{&1}();")
